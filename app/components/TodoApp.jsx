@@ -1,9 +1,37 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+const TodoList = require('TodoList');
 
 var TodoApp = React.createClass({
+  getInitialState: function() {
+    return {
+      todos: [
+        {
+          id: 1,
+          text: 'Walk the dog'
+        },
+        {
+          id: 2,
+          text: 'Clean the yard'
+        },
+        {
+          id: 3,
+          text: 'Fart really loud'
+        },
+        {
+          id: 4,
+          text: 'Do nothing'
+        }
+      ]
+    };
+  },
   render: function() {
-    return <div>Todo App</div>;
+    var { todos } = this.state;
+    return (
+      <div>
+        <TodoList todos={todos} />
+      </div>
+    );
   }
 });
 
