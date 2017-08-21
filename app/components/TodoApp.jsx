@@ -3,6 +3,8 @@ var PropTypes = React.PropTypes;
 const TodoList = require('TodoList');
 const AddTodoForm = require('AddTodoForm');
 
+const TodoSearch = require('TodoSearch');
+
 var TodoApp = React.createClass({
   getInitialState: function() {
     return {
@@ -23,7 +25,9 @@ var TodoApp = React.createClass({
           id: 4,
           text: 'Do nothing'
         }
-      ]
+      ],
+      showCompleted: false,
+      searchText: ''
     };
   },
   handleAddTodo: function(newTodo) {
@@ -35,10 +39,17 @@ var TodoApp = React.createClass({
     });
     alert(newTodo + ' added');
   },
+  handleSearch: function(showCompleted, searchText) {
+    this.setState({
+      showCompleted: showCompleted,
+      searchText: searchText.toLowerCase()
+    });
+  },
   render: function() {
     var { todos } = this.state;
     return (
       <div>
+        <TodoSearch onSearch={this.handleSearch} />
         <TodoList todos={todos} />
         <AddTodoForm addTodo={this.handleAddTodo} />
       </div>
