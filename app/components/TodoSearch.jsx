@@ -10,7 +10,7 @@ var TodoSearch = React.createClass({
   },
   render: function() {
     return (
-      <div>
+      <div className="container__header">
         <div>
           <input
             type="search"
@@ -20,7 +20,7 @@ var TodoSearch = React.createClass({
           />
         </div>
         <div>
-          <label htmlFor="">
+          <label>
             <input
               type="checkbox"
               ref="showCompleted"
