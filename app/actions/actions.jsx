@@ -1,4 +1,4 @@
-export var setSeacrhText = function(searchText) {
+export var setSearchText = function(searchText) {
   return {
     type: 'SET_SEARCH_TEXT',
     searchText
@@ -12,7 +12,7 @@ export var addTodo = function(text) {
   };
 };
 
-export var toggleShowCompeleted = function() {
+export var toggleShowCompleted = function() {
   return {
     type: 'TOGGLE_SHOW_COMPLETED'
   };

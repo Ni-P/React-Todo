@@ -7,7 +7,7 @@ describe('Actions', () => {
       type: 'SET_SEARCH_TEXT',
       searchText: 'Some search text'
     };
-    var res = actions.setSeacrhText(action.searchText);
+    var res = actions.setSearchText(action.searchText);
     expect(res).toEqual(action);
   });
 
@@ -25,7 +25,7 @@ describe('Actions', () => {
     var action = {
       type: 'TOGGLE_SHOW_COMPLETED'
     };
-    var res = actions.toggleShowCompeleted();
+    var res = actions.toggleShowCompleted();
     expect(res).toEqual(action);
   });
   it('Should generate action to toggle complete status of a todo', () => {
