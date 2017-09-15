@@ -11,9 +11,9 @@ store.subscribe(() => {
   console.log('new state', store.getState());
 });
 
-store.dispatch(actions.addTodo('new todo'));
-store.dispatch(actions.setSearchText('new'));
-store.dispatch(actions.toggleShowCompleted());
+// store.dispatch(actions.addTodo('new todo'));
+// store.dispatch(actions.setSearchText('new'));
+// store.dispatch(actions.toggleShowCompleted());
 
 // load foundation
 // require('style!css!foundation-sites/dist/foundation.min.css');
