@@ -1,5 +1,4 @@
 var React = require('react');
-var PropTypes = React.PropTypes;
 var { connect } = require('react-redux');
 const actions = require('actions');
 
@@ -9,7 +8,7 @@ export var AddTodoForm = React.createClass({
     var { dispatch } = this.props;
     var inputText = this.refs.text.value;
     if (inputText !== '') {
-      dispatch(actions.addTodo(inputText));
+      dispatch(actions.startAddTodo(inputText));
       this.refs.text.value = '';
     } else {
       this.refs.text.focus();

@@ -1,9 +1,10 @@
-const redux = require('redux');
-const {
+import * as redux from 'redux';
+import thunk from 'redux-thunk';
+import {
   searchTextReducer,
   showCompletedReducer,
   todosReducer
-} = require('reducers');
+} from 'reducers';
 
 export var configure = (initialState = {}) => {
   var reducer = redux.combineReducers({
@@ -16,6 +17,7 @@ export var configure = (initialState = {}) => {
     reducer,
     initialState,
     redux.compose(
+      redux.applyMiddleware(thunk),
       window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   );
