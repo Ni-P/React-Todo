@@ -3976,6 +3976,10 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
+redux-mock-store@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/redux-mock-store/-/redux-mock-store-1.0.3.tgz#e6183e80bee3a3eedb3f4eda9c18bcb197c9a021"
+
 redux-thunk@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
