@@ -129,7 +129,7 @@ describe('Actions', () => {
         done();
       }, done);
     });
-    it('should populate todos dispatch ADD_TODOS', done => {
+    it('should populate todos and dispatch ADD_TODOS', done => {
       const store = createMockStore({});
       const action = actions.startAddTodos();
 
@@ -138,7 +138,7 @@ describe('Actions', () => {
       store.dispatch(action).then(() => {
         const mockActions = store.getActions();
 
-        expect(mockActions[0]).toEqual('ADD_TODOS');
+        expect(mockActions[0].type).toEqual('ADD_TODOS');
         expect(mockActions[0].todos[0].length).toEqual(1);
         expect(mockActions[0].todos[0].text).toEqual('A test todo');
 
