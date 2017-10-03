@@ -7,7 +7,7 @@ var { Provider } = require('react-redux');
 const moment = require('moment');
 
 var configureStore = require('configureStore');
-const TodoApp = require('TodoApp');
+import { TodoApp } from 'TodoApp';
 import TodoList from 'TodoList';
 
 describe('TodoApp', () => {
