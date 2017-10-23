@@ -90,6 +90,28 @@ describe('Reducers', () => {
     expect(res.length).toEqual(1);
     expect(res[0]).toEqual(todos[0]);
   });
+  it('should empty todos array on LOGOUT', () => {
+    var todos = [
+      {
+        id: 111,
+        text: 'anything',
+        completed: false,
+        completedAt: undefined,
+        createdAt: 300000
+      }
+    ];
+    const actionAddTodos = {
+      type: 'ADD_TODOS',
+      todos
+    };
+    const actionLogout = {
+      type: 'LOGOUT'
+    };
+    var res = reducers.todosReducer(undefined, df(actionAddTodos));
+    res = reducers.todosReducer(res, df(actionLogout));
+
+    expect(res).toEqual([]);
+  });
   describe('authReducer', () => {
     it('should store uid on LOGIN', () => {
       const action = {
