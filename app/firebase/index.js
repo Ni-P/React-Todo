@@ -10,7 +10,9 @@ try {
     // messagingSenderId: '102391914318'
   };
   firebase.initializeApp(config);
-} catch (e) {}
+} catch (e) {
+  console.log(e);
+}
 
 export var githubProvider = new firebase.auth.GithubAuthProvider();
 export var firebaseRef = firebase.database().ref();

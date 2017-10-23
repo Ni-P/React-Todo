@@ -71,7 +71,7 @@ module.exports = {
     ]
   },
   devtool:
-    process.env.NODE_ENV == 'production'
+    process.env.NODE_ENV === 'production'
       ? undefined
       : 'cheap-module-source-eval-map'
 };

@@ -12,11 +12,10 @@ module.exports = {
     });
 
     // filter by searchText
-    if (searchText.length !== 0) {
-      filteredTodos = filteredTodos.filter(todo => {
-        return todo.text.toLowerCase().indexOf(searchText) == -1 ? false : true;
-      });
-    }
+    filteredTodos = filteredTodos.filter(todo => {
+      var text = todo.text.toLowerCase();
+      return searchText.length === 0 || text.indexOf(searchText) > -1;
+    });
 
     // sort todos with nonCompleted first
     filteredTodos.sort((a, b) => {

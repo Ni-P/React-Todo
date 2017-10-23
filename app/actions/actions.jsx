@@ -48,7 +48,7 @@ export var startAddTodos = () => {
     var todosRef = firebaseRef.child('todos');
     var todos = [];
 
-    todosRef.once('value').then(data => {
+    return todosRef.once('value').then(data => {
       var todosData = data.val() || {};
       Object.keys(todosData).forEach(todoKey => {
         var todo = todosData[todoKey];
@@ -111,5 +111,18 @@ export var startLogout = () => {
       .then(() => {
         console.log('logged out');
       });
+  };
+};
+
+export var login = uid => {
+  return {
+    type: 'LOGIN',
+    uid
+  };
+};
+
+export var logout = () => {
+  return {
+    type: 'LOGOUT'
   };
 };

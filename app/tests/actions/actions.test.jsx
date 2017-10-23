@@ -46,7 +46,7 @@ describe('Actions', () => {
           text: todoText
         });
         done();
-      })
+      }, done)
       .catch(done);
   });
   it('should generate ADD_TODOS action', () => {
@@ -84,6 +84,24 @@ describe('Actions', () => {
     var res = actions.updateTodo(action.id, action.updates);
     expect(res).toEqual(action);
   });
+
+  it('should generate login action object', () => {
+    const action = {
+      type: 'LOGIN',
+      uid: '123abc'
+    };
+    const res = actions.login(action.uid);
+
+    expect(res).toEqual(action);
+  });
+  it('should generate logout action object', () => {
+    const action = {
+      type: 'LOGOUT'
+    };
+    const res = actions.logout();
+
+    expect(res).toEqual(action);
+  });
   describe('Test with firebasetodos', () => {
     var testTodoRef;
 
@@ -99,7 +117,7 @@ describe('Actions', () => {
             completed: false,
             createdAt: 12345
           });
-        })
+        }, done)
         .then(() => done())
         .catch(done);
     });
@@ -139,7 +157,7 @@ describe('Actions', () => {
         const mockActions = store.getActions();
 
         expect(mockActions[0].type).toEqual('ADD_TODOS');
-        expect(mockActions[0].todos[0].length).toEqual(1);
+        expect(mockActions[0].todos.length).toEqual(1);
         expect(mockActions[0].todos[0].text).toEqual('A test todo');
 
         done();
