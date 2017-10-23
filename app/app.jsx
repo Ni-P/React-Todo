@@ -10,6 +10,7 @@ import router from 'app/router/';
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     store.dispatch(actions.login(user.uid));
+    store.dispatch(actions.startAddTodos());
     hashHistory.push('/todos');
   } else {
     store.dispatch(actions.logout());
@@ -31,8 +32,6 @@ var store = require('configureStore').configure();
 // store.dispatch(actions.addTodo('new todo'));
 // store.dispatch(actions.setSearchText('new'));
 // store.dispatch(actions.toggleShowCompleted());
-
-store.dispatch(actions.startAddTodos());
 
 // load foundation
 // require('style!css!foundation-sites/dist/foundation.min.css');
